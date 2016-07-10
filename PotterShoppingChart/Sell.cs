@@ -18,7 +18,10 @@ namespace PotterShoppingChart
                     break;
                 case 3:
                     discount = 0.9;
-                    break;    
+                    break;
+                case 4:
+                    discount = 0.8;
+                    break;
             }
             return books.Sum(x => x.Price) * discount;
         }
