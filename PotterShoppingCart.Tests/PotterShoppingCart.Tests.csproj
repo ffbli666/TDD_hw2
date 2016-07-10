@@ -54,9 +54,16 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="User Story.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PotterShoppingChart\PotterShoppingChart.csproj">
+      <Project>{AAC06640-54D4-4476-8C93-DE2BCF78D069}</Project>
+      <Name>PotterShoppingChart</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
