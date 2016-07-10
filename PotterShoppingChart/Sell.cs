@@ -9,7 +9,7 @@ namespace PotterShoppingChart
     {
         public int CalculatePrice(List<Book> books)
         {
-            throw new NotImplementedException();
+            return books.Sum(x => x.Price);
         }
     }
 }
