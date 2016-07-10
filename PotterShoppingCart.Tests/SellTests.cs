@@ -162,5 +162,26 @@ namespace PotterShoppingChart.Tests
             var expected = 750;
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void CalculatePriceTest_第一集單價100買了一本_第二集單價110買二本_第三集單價120買了三本_價格應為_635_5()
+        {
+            //(100+110+120)*0.9 + (110+120)*0.95 + 120 = 297+218.5+120 = 635.5
+            //arrage
+            Sell target = new Sell();
+            List<Book> books = new List<Book>
+            {
+                new Book { Name="哈利波特第一集", Price=100},
+                new Book { Name="哈利波特第二集", Price=110},
+                new Book { Name="哈利波特第三集", Price=120},
+                new Book { Name="哈利波特第二集", Price=110},
+                new Book { Name="哈利波特第三集", Price=120},
+                new Book { Name="哈利波特第三集", Price=120},
+            };
+            //act
+            var actual = target.CalculatePrice(books);
+            //assert
+            var expected = 635.5;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
