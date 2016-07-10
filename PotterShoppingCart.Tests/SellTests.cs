@@ -21,9 +21,9 @@ namespace PotterShoppingChart.Tests
                 new Book { Name="哈利波特第一集", Price=100},
             };
             //act
-            int actual = target.CalculatePrice(books);
+            var actual = target.CalculatePrice(books);
             //assert
-            int expected = 100;
+            var expected = 100;
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
@@ -38,9 +38,9 @@ namespace PotterShoppingChart.Tests
                 new Book { Name="哈利波特第二集", Price=100},
             };
             //act
-            int actual = target.CalculatePrice(books);
+            var actual = target.CalculatePrice(books);
             //assert
-            int expected = 190;
+            var expected = 190;
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
@@ -56,9 +56,9 @@ namespace PotterShoppingChart.Tests
                 new Book { Name="哈利波特第三集", Price=100},
             };
             //act
-            int actual = target.CalculatePrice(books);
+            var actual = target.CalculatePrice(books);
             //assert
-            int expected = 270;
+            var expected = 270;
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
@@ -75,9 +75,9 @@ namespace PotterShoppingChart.Tests
                 new Book { Name="哈利波特第四集", Price=100},
             };
             //act
-            int actual = target.CalculatePrice(books);
+            var actual = target.CalculatePrice(books);
             //assert
-            int expected = 320;
+            var expected = 320;
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
@@ -95,9 +95,9 @@ namespace PotterShoppingChart.Tests
                 new Book { Name="哈利波特第五集", Price=100},
             };
             //act
-            int actual = target.CalculatePrice(books);
+            var actual = target.CalculatePrice(books);
             //assert
-            int expected = 375;
+            var expected = 375;
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
@@ -114,9 +114,9 @@ namespace PotterShoppingChart.Tests
                 new Book { Name="哈利波特第三集", Price=100},
             };
             //act
-            int actual = target.CalculatePrice(books);
+            var actual = target.CalculatePrice(books);
             //assert
-            int expected = 370;
+            var expected = 370;
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
@@ -134,9 +134,9 @@ namespace PotterShoppingChart.Tests
                 new Book { Name="哈利波特第三集", Price=100},
             };
             //act
-            int actual = target.CalculatePrice(books);
+            var actual = target.CalculatePrice(books);
             //assert
-            int expected = 460;
+            var expected = 460;
             Assert.AreEqual(expected, actual);
         }
     }

@@ -7,9 +7,18 @@ namespace PotterShoppingChart
 {
     public class Sell
     {
-        public int CalculatePrice(List<Book> books)
+        public double CalculatePrice(List<Book> books)
         {
-            return books.Sum(x => x.Price);
+            IEnumerable<IGrouping<String, Book>> query = books.GroupBy(x => x.Name);
+            double discount = 1.0;
+            switch (query.Count())
+            {
+                case 2:
+                    discount = 0.95;
+                    break;
+                    
+            }
+            return books.Sum(x => x.Price) * discount;
         }
     }
 }
