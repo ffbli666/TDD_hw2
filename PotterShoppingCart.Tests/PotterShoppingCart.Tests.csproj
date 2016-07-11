@@ -54,15 +54,15 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SellTests.cs" />
+    <Compile Include="CartTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="User Story.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PotterShoppingChart\PotterShoppingChart.csproj">
+    <ProjectReference Include="..\PotterShoppingChart\PotterShoppingCart.csproj">
       <Project>{AAC06640-54D4-4476-8C93-DE2BCF78D069}</Project>
-      <Name>PotterShoppingChart</Name>
+      <Name>PotterShoppingCart</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

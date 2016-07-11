@@ -1,4 +1,4 @@
-﻿namespace PotterShoppingChart
+﻿namespace PotterShoppingCart
 {
     public interface IDiscount
     {

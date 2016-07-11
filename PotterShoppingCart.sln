@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PotterShoppingCart.Tests", "PotterShoppingCart.Tests\PotterShoppingCart.Tests.csproj", "{DE4ABE74-E62D-42A2-A753-08A8C35A36F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PotterShoppingChart", "PotterShoppingChart\PotterShoppingChart.csproj", "{AAC06640-54D4-4476-8C93-DE2BCF78D069}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PotterShoppingCart", "PotterShoppingChart\PotterShoppingCart.csproj", "{AAC06640-54D4-4476-8C93-DE2BCF78D069}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
