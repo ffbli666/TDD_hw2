@@ -14,7 +14,7 @@ namespace PotterShoppingCart.Tests
         public void CalculatePriceTest_第一集買了一本_其他都沒買_價格應為_100()
         {
             //100*1=100
-            //arrage廿
+            //arrage
             Cart target = new Cart();
             List<Book> books = new List<Book>
             {
