@@ -20,6 +20,11 @@ namespace PotterShoppingCart
             {
                 discount = 0.95;
             }
+            else if(count == 3) 
+            {
+                discount = 0.9;
+            }
+
             return products.Sum(x => x.Price) * discount;
         }
     }
