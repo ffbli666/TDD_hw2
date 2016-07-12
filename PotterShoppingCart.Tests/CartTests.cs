@@ -132,7 +132,7 @@ namespace PotterShoppingCart.Tests
             //act
             var actual = target.CalculatePrice(products);
             //assert
-            var expected = 320;
+            var expected = 375;
             Assert.AreEqual(expected, actual);
         }
     }
