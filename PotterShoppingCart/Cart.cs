@@ -8,44 +8,33 @@ namespace PotterShoppingCart
     {
         public double CalculatePrice(List<Product> products)
         {
-            int maxCount = GetMaxCount(products);
             /*
                 .       100                     ^
             . . .       300*0.9                 | 形成的每個組合(上下)  
             1 2 3 4 5                           |
             <-------> 滿足優惠條件的組成(左右)  v
             */
+            var groupByName = products.GroupBy(x => x.Name);
+            //取得最大數量集數的本數
+            int maxCount = groupByName.Max(x=>x.Count());
+            var nameList = groupByName.ToDictionary(x => x.Key, x => x.ToList());
             List<double> amountList = new List<double> { };
-            IEnumerable<IGrouping<String, Product>> query = products.GroupBy(x => x.Name);
             for (int i = 0; i < maxCount; i++)
             {
                 int sum = 0; //這組優惠集合中的總和
                 int different = 0; //這組優惠集合中有幾個不同集數的書
-                foreach (IGrouping<String, Product> bookGroup in query)
+                foreach (var item in nameList)
                 {
-                    var temp = bookGroup.ToList();
-                    if (i < temp.Count())
+                    var list = item.Value;
+                    if (i < list.Count())
                     {
-                        sum += temp[i].Price;
+                        sum += list[i].Price;
                         different += 1;
                     }
                 }
                 amountList.Add(sum * GetDiscount(different));
             }
             return amountList.Sum();
-        }
-
-        private int GetMaxCount(List<Product> products)
-        {
-            //取得最大數量集數的本數
-            var groupByNameCountList = from b in products
-                                       group b by b.Name into g
-                                       select new
-                                       {
-                                           g.Key,
-                                           Count = g.Count()
-                                       };
-            return groupByNameCountList.Max(x => x.Count);
         }
 
         private double GetDiscount(int different)
