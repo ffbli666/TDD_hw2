@@ -8,7 +8,7 @@ namespace PotterShoppingCart
     {
         public double CalculatePrice(List<Product> products)
         {
-            int maxCount = getMaxCoount(products);
+            int maxCount = GetMaxCount(products);
             /*
                 .       100                     ^
             . . .       300*0.9                 | 形成的每個組合(上下)  
@@ -30,12 +30,12 @@ namespace PotterShoppingCart
                         different += 1;
                     }
                 }
-                amountList.Add(sum * getDiscount(different));
+                amountList.Add(sum * GetDiscount(different));
             }
             return amountList.Sum();
         }
 
-        private int getMaxCoount(List<Product> products)
+        private int GetMaxCount(List<Product> products)
         {
             //取得最大數量集數的本數
             var groupByNameCountList = from b in products
@@ -48,7 +48,7 @@ namespace PotterShoppingCart
             return groupByNameCountList.Max(x => x.Count);
         }
 
-        private double getDiscount(int different)
+        private double GetDiscount(int different)
         {
             double discount = 1;
             switch (different)
