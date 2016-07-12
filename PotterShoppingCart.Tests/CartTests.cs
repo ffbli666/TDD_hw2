@@ -82,5 +82,31 @@ namespace PotterShoppingCart.Tests
             var expected = 270;
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void CalculatePriceTest_一二三四集各買了一本_價格應為_320()
+        {
+            //Scenario: 一二三四集各買了一本，價格應為100 * 4 * 0.8 = 320
+            //Given 第一集買了 1 本
+            //And 第二集買了 1 本
+            //And 第三集買了 1 本
+            //And 第四集買了 1 本
+            //And 第五集買了 0 本
+            //When 結帳
+            //Then 價格應為 320 元
+            //arrange
+            var target = new Cart();
+            List<Product> products = new List<Product>
+            {
+                new Product { Name="哈利波特第一集", Price=100},
+                new Product { Name="哈利波特第二集", Price=100},
+                new Product { Name="哈利波特第三集", Price=100},
+                new Product { Name="哈利波特第四集", Price=100},
+            };
+            //act
+            var actual = target.CalculatePrice(products);
+            //assert
+            var expected = 320;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
