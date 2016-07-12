@@ -14,7 +14,7 @@ namespace PotterShoppingCart
 
         public object CalculatePrice(List<Product> products)
         {
-            throw new NotImplementedException();
+            return products.Sum(x => x.Price);
         }
     }
 }
