@@ -12,9 +12,15 @@ namespace PotterShoppingCart
             throw new NotImplementedException();
         }
 
-        public object CalculatePrice(List<Product> products)
+        public double CalculatePrice(List<Product> products)
         {
-            return products.Sum(x => x.Price);
+            var count = products.GroupBy(x => x.Name).Count();
+            double discount = 1;
+            if (count == 2)
+            {
+                discount = 0.95;
+            }
+            return products.Sum(x => x.Price) * discount;
         }
     }
 }
