@@ -16,13 +16,17 @@ namespace PotterShoppingCart
         {
             var count = products.GroupBy(x => x.Name).Count();
             double discount = 1;
-            if (count == 2)
+            switch(count)
             {
-                discount = 0.95;
-            }
-            else if(count == 3) 
-            {
-                discount = 0.9;
+                case 2:
+                    discount = 0.95;
+                    break;
+                case 3:
+                    discount = 0.9;
+                    break;
+                case 4:
+                    discount = 0.8;
+                    break;
             }
 
             return products.Sum(x => x.Price) * discount;
