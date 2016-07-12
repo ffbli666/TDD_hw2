@@ -53,10 +53,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CartTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="User Story.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PotterShoppingCart\PotterShoppingCart.csproj">
+      <Project>{B913E6B2-67E3-404C-9A7A-D7DBE026F6D5}</Project>
+      <Name>PotterShoppingCart</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
