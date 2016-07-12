@@ -14,9 +14,14 @@ namespace PotterShoppingCart
 
         public double CalculatePrice(List<Product> products)
         {
-            var count = products.GroupBy(x => x.Name).Count();
+            var different = products.GroupBy(x => x.Name).Count();
+            return products.Sum(x => x.Price) * getDiscount(different);
+        }
+
+        private double getDiscount(int different)
+        {
             double discount = 1;
-            switch(count)
+            switch (different)
             {
                 case 2:
                     discount = 0.95;
@@ -27,9 +32,11 @@ namespace PotterShoppingCart
                 case 4:
                     discount = 0.8;
                     break;
+                case 5:
+                    discount = 0.75;
+                    break;
             }
-
-            return products.Sum(x => x.Price) * discount;
+            return discount;
         }
     }
 }
